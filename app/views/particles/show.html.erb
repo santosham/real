@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @particle.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @particle.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @particle.image_url %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @particle.price %>
+</p>
+
+<%= link_to 'Edit', edit_particle_path(@particle) %> |
+<%= link_to 'Back', particles_path %>

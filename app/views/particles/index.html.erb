@@ -1,0 +1,26 @@
+<h1>Listing particles</h1>
+<table>
+<% @particles.each do |particle| %>
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+<td>
+<%= image_tag(particle.image_url, class: 'list_image') %>
+</td>
+<td class="list_description">
+<dl>
+<dt><%= particle.title %></dt>
+<dd><%= truncate(strip_tags(particle.description),
+length: 250) %></dd>
+</dl>
+</td>
+<td class="list_actions">
+<%= link_to 'Show', particle %><br/>
+<%= link_to 'Edit', edit_particle_path(particle) %><br/>
+<%= link_to 'Destroy', particle,
+confirm: 'Are you sure?',
+method: :delete %>
+</td>
+</tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New product', new_particle_path %>
